@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/246.a37a2740.chunk.css","mappings":"AAAA,qBACE,YAAa,CACb,cAAe,CAEf,QAAS,CADT,eAEF,CAEA,yBACE,WACF","sources":["components/CastList/styles.module.css"],"sourcesContent":[".list {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  gap: 10px;\n}\n\n.list-item {\n  width: 200px;\n}\n"],"names":[],"sourceRoot":""}
