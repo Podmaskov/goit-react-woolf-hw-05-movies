@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MoviesList } from '../../components/MoviesList/MoviesList';
 import { getTrendingMovies } from '../../api/themoviedbAPI';
 
@@ -13,11 +13,7 @@ const Home = () => {
     fetchTrendingMovies();
   }, []);
 
-  return (
-    <Suspense fallback={<h2>Loading...</h2>}>
-      <MoviesList title="Trending today" movies={trendingMovies} />
-    </Suspense>
-  );
+  return <MoviesList title="Trending today" movies={trendingMovies} />;
 };
 
 export default Home;

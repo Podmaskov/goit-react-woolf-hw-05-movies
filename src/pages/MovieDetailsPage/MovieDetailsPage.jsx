@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
 
 import { MovieDetails } from '../../components/MovieDetails/MovieDetails';
@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 const MovieDetailsPage = () => {
   const location = useLocation();
-  const [movieDetails, setMovieDetails] = useState({});
+  const [movieDetails, setMovieDetails] = useState(null);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div>
-      <MovieDetails movieDetails={movieDetails} />
+      {movieDetails && <MovieDetails movieDetails={movieDetails} />}
       <hr />
       <p className={styles['addition-title']}>Addition information</p>
       <ul>
@@ -43,9 +43,7 @@ const MovieDetailsPage = () => {
         </li>
       </ul>
       <hr />
-      <Suspense fallback={<h2>Loading...</h2>}>
-        <Outlet />
-      </Suspense>
+      <Outlet />
     </div>
   );
 };

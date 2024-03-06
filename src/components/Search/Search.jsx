@@ -7,7 +7,7 @@ export const Search = ({ onSubmit }) => {
 
   const handelSubmit = event => {
     event.preventDefault();
-    onSubmit(value);
+    onSubmit({ query: value });
   };
   return (
     <form className={styles.form} onSubmit={handelSubmit}>
